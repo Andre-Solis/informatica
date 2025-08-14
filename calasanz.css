@@ -10,3 +10,8 @@ h2{
     background-color: black;
     color: white;
 }
+/*Selector ID*/
+#biografía{
+        background-color:orangered;
+        color:darkred;
+}
