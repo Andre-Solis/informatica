@@ -1,9 +1,9 @@
 /*selector de etiqueta*/
 h1{
-    color:red;
+    color:rgba(255, 184, 53, 0.233);
 }
 h2{
-    color:blue;
+    color:rgb(95, 73, 45);
 }
 /*selector de clase*/
 ·oscuro{
@@ -15,3 +15,34 @@ h2{
         background-color:orangered;
         color:darkred;
 }
+footer a {
+    color: #fff8ec;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    margin: 0 0.5rem; 
+    font-size: 1.8rem; 
+    display: inline-block; 
+  }
+  
+  footer a:hover {
+    color: gold;
+  }
+  footer{
+    background-color: tan;
+    text-align: center;
+    padding: 1rem;
+  }
+  nav {
+    background-color: tan;
+    text-align: center;
+    padding: 1rem;
+  }
+  header {
+    background-image: url("./Imagen\ fondo.jfif");
+    background-image: url("./pergamino.jpg");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 3rem 1rem;
+    }
