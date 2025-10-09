@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicios Estudiantes</title>
+</head>
+<body>
+
+    <h2>Ejercicio 1: Confirmar asistencia a la fiesta</h2>
+    <form id="fiestaForm">
+        <label for="nombreFiesta">Nombre:</label>
+        <input type="text" id="nombreFiesta" required>
+
+        <p>¿Asistirás a la fiesta?</p>
+        <input type="radio" id="si" name="asistencia" value="Sí" required>
+        <label for="si">Sí</label>
+        <input type="radio" id="no" name="asistencia" value="No">
+        <label for="no">No</label>
+
+        <br><br>
+        <button type="submit">Confirmar</button>
+    </form>
+
+    <p id="mensajeFiesta"></p>
+
+    <hr>
+
+    <h2>Ejercicio 2: Calcular promedio</h2>
+    <form id="promedioForm">
+        <label>Nota 1: <input type="number" id="nota1" min="0" max="10" required></label><br>
+        <label>Nota 2: <input type="number" id="nota2" min="0" max="10" required></label><br>
+        <label>Nota 3: <input type="number" id="nota3" min="0" max="10" required></label><br><br>
+        <button type="submit">Calcular Promedio</button>
+    </form>
+
+    <p id="mensajePromedio"></p>
+
+    <hr>
+
+    <h2>Ejercicio 3: Registro de Estudiante</h2>
+    <form id="registroForm" target="_blank">
+        <label>Nombre: <input type="text" id="nombreEstudiante" required></label><br>
+        <label>Apellido: <input type="text" id="apellidoEstudiante" required></label><br>
+        <label>Curso: <input type="text" id="cursoEstudiante" required></label><br><br>
+        <button type="button" onclick="mostrarBienvenida()">Enviar y Ver Bienvenida</button>
+    </form>
+
+    <script>
+        // Ejercicio 1
+        document.getElementById("fiestaForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            const nombre = document.getElementById("nombreFiesta").value;
+            const asistencia = document.querySelector('input[name="asistencia"]:checked').value;
+
+            const mensaje = asistencia === "Sí"
+                ? `¡Gracias por confirmar, ${nombre}! Nos vemos en la fiesta.`
+                : `¡Qué pena, ${nombre}! Te vamos a extrañar.`;
+
+            document.getElementById("mensajeFiesta").textContent = mensaje;
+        });
+
+        // Ejercicio 2
+        document.getElementById("promedioForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const nota1 = parseFloat(document.getElementById("nota1").value);
+            const nota2 = parseFloat(document.getElementById("nota2").value);
+            const nota3 = parseFloat(document.getElementById("nota3").value);
+
+            const promedio = ((nota1 + nota2 + nota3) / 3).toFixed(2);
+            const mensaje = promedio >= 6
+                ? `Tu promedio es ${promedio}. ¡Aprobaste!`
+                : `Tu promedio es ${promedio}. Necesitás repasar.`;
+
+            document.getElementById("mensajePromedio").textContent = mensaje;
+        });
+
+        // Ejercicio 3
+        function mostrarBienvenida() {
+            const nombre = document.getElementById("nombreEstudiante").value;
+            const apellido = document.getElementById("apellidoEstudiante").value;
+            const curso = document.getElementById("cursoEstudiante").value;
+
+            const nuevaVentana = window.open("", "_blank");
+            nuevaVentana.document.write(`
+                <h1>¡Bienvenido/a, ${nombre} ${apellido}!</h1>
+                <p>Has sido registrado en el curso: <strong>${curso}</strong></p>
+            `);
+        }
+    </script>
+
+</body>
+</html>
