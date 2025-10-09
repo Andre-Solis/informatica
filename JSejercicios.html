@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Contador y Cambiar Colores</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .counter {
+      font-size: 48px;
+      margin: 20px;
+    }
+
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .color-buttons {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Contador Regresivo</h1>
+  <div class="counter" id="counter">10</div>
+  <button onclick="decreaseCounter()">Disminuir</button>
+
+  <div class="color-buttons">
+    <h2>Cambiar colores:</h2>
+    <button onclick="changeColors('white', 'black')">Claro</button>
+    <button onclick="changeColors('black', 'white')">Oscuro</button>
+    <button onclick="changeColors('#004d99', '#ffcc00')">Azul/Amarillo</button>
+  </div>
+
+  <script>
+    let count = 10;
+
+    function decreaseCounter() {
+      if (count > 0) {
+        count--;
+        document.getElementById('counter').textContent = count;
+      } else {
+        alert("El contador ya llegó a 0.");
+      }
+    }
+
+    function changeColors(backgroundColor, textColor) {
+      document.body.style.backgroundColor = backgroundColor;
+      document.body.style.color = textColor;
+    }
+  </script>
+
+</body>
+</html>
