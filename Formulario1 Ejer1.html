@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Confirmar Asistencia</title>
+  <style>
+    body { font-family: Arial; margin: 20px; }
+    .resultado { margin-top: 15px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h2>Fiesta de Fin de Año</h2>
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" placeholder="Escribí tu nombre">
+
+  <p>¿Asistirás a la fiesta?</p>
+  <input type="radio" name="asistencia" value="sí" id="si">
+  <label for="si">Sí</label>
+  <input type="radio" name="asistencia" value="no" id="no">
+  <label for="no">No</label>
+
+  <br><br>
+  <button onclick="confirmarAsistencia()">Confirmar</button>
+
+  <div class="resultado" id="mensaje"></div>
+
+  <script>
+    function confirmarAsistencia() {
+      const nombre = document.getElementById('nombre').value;
+      const respuesta = document.querySelector('input[name="asistencia"]:checked');
+      const mensaje = document.getElementById('mensaje');
+
+      if (!nombre || !respuesta) {
+        mensaje.textContent = "Por favor, completá todos los campos.";
+        mensaje.style.color = "red";
+        return;
+      }
+
+      if (respuesta.value === "sí") {
+        mensaje.textContent = `¡Gracias por confirmar, ${nombre}! Nos vemos en la fiesta 🎉`;
+        mensaje.style.color = "green";
+      } else {
+        mensaje.textContent = `¡Qué pena, ${nombre}! Te vamos a extrañar 😢`;
+        mensaje.style.color = "blue";
+      }
+    }
+  </script>
+</body>
+</html>

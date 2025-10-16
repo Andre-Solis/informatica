@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro de Estudiante</title>
+  <style>
+    body { font-family: Arial; margin: 20px; }
+  </style>
+</head>
+<body>
+  <h2>Registro de Estudiante</h2>
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre"><br><br>
+
+  <label for="apellido">Apellido:</label>
+  <input type="text" id="apellido"><br><br>
+
+  <label for="curso">Curso:</label>
+  <input type="text" id="curso"><br><br>
+
+  <button onclick="registrar()">Registrar</button>
+
+  <script>
+    function registrar() {
+      const nombre = document.getElementById('nombre').value;
+      const apellido = document.getElementById('apellido').value;
+      const curso = document.getElementById('curso').value;
+
+      if (!nombre || !apellido || !curso) {
+        alert("Por favor, completá todos los campos.");
+        return;
+      }
+
+      // Crear una nueva página con el mensaje
+      const nuevaVentana = window.open("", "_blank");
+      nuevaVentana.document.write(`
+        <h2>¡Bienvenido/a ${nombre} ${apellido}!</h2>
+        <p>Has sido registrado en el curso: <strong>${curso}</strong>.</p>
+      `);
+    }
+  </script>
+</body>
+</html>

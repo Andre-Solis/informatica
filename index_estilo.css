@@ -1,0 +1,83 @@
+body {
+   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   background-color: #310707;
+}
+header, footer {
+   background-color: rgb(158, 41, 41);
+   color: rgb(253, 0, 0);
+   text-align: center;
+   padding: 0.5rem;
+}
+nav {
+   background-color: rgb(241, 165, 114);
+   padding: 1rem;
+   display: flex;
+   justify-content: center;
+   gap: 2rem;
+}
+nav a {
+   text-decoration: none;
+   color: #31072e; 
+   font-weight: bold;
+}
+main {
+   padding: 2rem;
+   display: flex;
+   gap: 3rem;
+}
+article, aside {
+   width: 60%;
+}
+strong {
+   color: #000000;
+}
+blockquote{
+   font-style: italic;
+   color: 550c0c;
+} 
+article {
+   background-color: rgb(252, 57, 57);
+   padding: 1rem;
+   border-radius: 12px;
+   margin-bottom: 1rem;
+   width: 100%;
+}
+aside {
+   background-color: rgb(248, 247, 191);
+   padding: 1rem;
+   border-left: 4px solid rgb(158, 41, 41);
+   border-radius: 7px;
+}
+aside a {
+   text-decoration: none;
+   color: #000000;
+}
+th {
+   background-color: rgb(192, 188, 188);
+}
+th, td {
+   border: 1px solid black;
+   padding: 0.5rem;
+} 
+table {
+   width: 100%;
+   border-collapse: collapse;
+}
+img {
+   max-width: 100%;
+   margin-top: 1rem;
+   border-radius: 8px;
+}
+footer a {
+   color: rgb(191, 222, 248);
+   text-decoration: none;
+} 
+table {
+   width: 100%;
+   color: white;
+   background-color: rgb(143, 141, 241);
+   border-collapse: collapse;
+}
+th{
+   background-color: rgb(158, 41, 41);
+}
